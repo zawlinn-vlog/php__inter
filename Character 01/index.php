@@ -188,8 +188,11 @@ include_once "./assets/view/header.php";
     */
 
 
+    /*
+
+
     class Vehical{
-        /*
+        
         public function __get($el){
             echo "You are pull out <b> $el </b> variable." . "<br/>";
         }
@@ -198,7 +201,7 @@ include_once "./assets/view/header.php";
 
             echo "Your are set variable <b> $el </b> to value of <b> $mtd </b>. <br/>";
         }
-        */
+        
 
         public function __isset($el){
             echo "There is no set properties name with " . $el . "<br/>";
@@ -219,7 +222,7 @@ include_once "./assets/view/header.php";
             echo "Unserialize is working.";
         }
 
-        /*
+        
 
         public function greeting(){
             echo "Hello, There 🙋🏽‍♂️";
@@ -238,7 +241,7 @@ include_once "./assets/view/header.php";
 
             errchk($arg);
         }
-        */
+        
 
 
         public function __toString(){
@@ -287,9 +290,36 @@ include_once "./assets/view/header.php";
 
     // $obj::hifive("Earth", "Sun", "Moon", "Universe");
 
-
+    */
   
 
+
+    class Main{
+
+        public function __call($mthd, $arg){
+           echo "There is no method name with " . $mthd . "<br/>";
+
+            $this->errchk($arg);
+       }
+
+
+       public static function __callStatic($mthd, $arg){
+           echo "There is no method name with " . $mthd . "<br/>";
+
+            errchk($arg);
+       }
+
+       private function errchk($ary){
+           echo "<pre>" . print_r($ary, true) . "</pre>";
+       }
+
+   }
+
+
+   $obj = new Main();
+
+   $obj-> getName('Aung Aung', 'Maung Kyaw');
+   $obj::goHome('Yangon', 'Mandalay');
 
 
 

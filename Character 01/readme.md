@@ -253,7 +253,7 @@ PHP Access Modifier &mdash;
         public static function __callStatic($mthd, $arg){
             echo "There is no unset properties name with " . $mthd . "<br/>";
 
-            $this->errchk($arg);
+            errchk($arg);
         }
 
         private function errchk($ary){
@@ -267,6 +267,13 @@ PHP Access Modifier &mdash;
 
     $obj-> getName('Aung Aung', 'Maung Kyaw');
     $obj::goHome("From Yangon", "to Mandalay");
+
+```
+
+### Serialize vs Unserialize &mdash;
+
+```php
+
 
 ```
 
