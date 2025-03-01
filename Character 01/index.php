@@ -152,13 +152,15 @@ include_once "./assets/view/header.php";
 
         
 
-        function errchk($obj){
-
-            echo "<pre>" . print_r($obj, true) . "<br/>";
-        }
+        
 
 
     */
+
+    function errchk($obj){
+
+        echo "<pre>" . print_r($obj, true) . "<br/>";
+    }
 
     /*
     class Vehical{
