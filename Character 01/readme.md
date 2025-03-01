@@ -210,6 +210,66 @@ PHP Access Modifier &mdash;
 
 ```
 
+### \_\_isset vs \_\_unset Methods &mdash;
+
+```php
+
+    class Main{
+
+         public function __isset($el){
+            echo "There is no set properties name with " . $el . "<br/>";
+        }
+
+
+        public function __unset($el){
+            echo "There is no unset properties name with " . $el . "<br/>";
+        }
+
+    }
+
+
+    $obj = new Main();
+
+    isset($obj-> name);
+    unset($obj-> graduate);
+
+```
+
+### \_\_call vs \_\_callStatic methods &mdash;
+
+- These methods must have 2 arguments one for method name and one for argument array.
+
+```php
+
+    class Main{
+
+         public function __call($mthd, $arg){
+            echo "There is no set properties name with " . $mthd . "<br/>";
+
+            echo $this->errchk($arg)
+        }
+
+
+        public static function __callStatic($mthd, $arg){
+            echo "There is no unset properties name with " . $mthd . "<br/>";
+
+            $this->errchk($arg);
+        }
+
+        private function errchk($ary){
+            echo "<pre>" . print_r($ary, true) . "</pre>";
+        }
+
+    }
+
+
+    $obj = new Main();
+
+    $obj-> getName('Aung Aung', 'Maung Kyaw');
+    $obj::goHome("From Yangon", "to Mandalay");
+
+```
+
 <br>
 
 <!-- ![Screenshot of Project](./s1.png) -->
