@@ -165,25 +165,25 @@ PHP Access Modifier &mdash;
 
 ### Magic Methods &mdash;
 
-| #   | Methods        | Description                                              |
-| --- | -------------- | -------------------------------------------------------- |
-| 1   | \_\_construct  | Auto Invoke the object is initiate                       |
-| 2   | \_\_destruct   | Auto Invoke all of the class work is done                |
-| 3   | \_\_get        | show error when you call undefined properties            |
-| 4   | \_\_set        | show error when you set to value to undefined properties |
-| 5   | \_\_isset      |
-| 6   | \_\_unset      |
-| 7   | \_\_call       |
-| 8   | \_\_callstatic |
-| 9   | \_\_sleep      |
-| 10  | \_\_wakeup     |
-| 11  | \_\_toString   |
-| 12  | \_\_invoke     |
+| #   | Methods         | Description                                              |
+| --- | --------------- | -------------------------------------------------------- |
+| 1   | \_\_construct   | Auto Invoke the object is initiate                       |
+| 2   | \_\_destruct    | Auto Invoke all of the class work is done                |
+| 3   | \_\_get         | show error when you call undefined properties            |
+| 4   | \_\_set         | show error when you set to value to undefined properties |
+| 5   | \_\_isset($var) | show if a properties is set or not                       |
+| 6   | \_\_unset($var) | show if a properties is unset or not                     |
+| 7   | \_\_call        | Show msg if when you call a fun is exist nor not         |
+| 8   | \_\_callStatic  | Show msg if when you call a static fun is exist nor not  |
+| 9   | \_\_sleep       | auto invoke when serialize to an object                  |
+| 10  | \_\_wakeup      | auto invoke when unserialize to an object                |
+| 11  | \_\_toString    | auto invoke when you call an objct as a string           |
+| 12  | \_\_invoke      | auto invoke when you call an objct as a method           |
 
 <hr/>
 <br/>
 
-#### **get() && **set() &mdash;
+#### \_\_get() && \_\_set() Methods &mdash;
 
 ```php
 
@@ -206,8 +206,6 @@ PHP Access Modifier &mdash;
     echo $obj-> brand;
 
     $obj->productYear = 1991;
-
-
 
 
 ```

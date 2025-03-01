@@ -189,7 +189,7 @@ include_once "./assets/view/header.php";
 
 
     class Vehical{
-
+        /*
         public function __get($el){
             echo "You are pull out <b> $el </b> variable." . "<br/>";
         }
@@ -198,18 +198,102 @@ include_once "./assets/view/header.php";
 
             echo "Your are set variable <b> $el </b> to value of <b> $mtd </b>. <br/>";
         }
+        */
+
+        public function __isset($el){
+            echo "There is no set properties name with " . $el . "<br/>";
+        }
+
+
+        public function __unset($el){
+            echo "There is no unset properties name with " . $el . "<br/>";
+        }
+
+
+        public function __sleep(){
+            echo "Serailize is working.";
+            return [];
+        }
+
+        public function __wakeup(){
+            echo "Unserialize is working.";
+        }
+
+        /*
+
+        public function greeting(){
+            echo "Hello, There 🙋🏽‍♂️";
+        }
+
+        public function __call($mtd, $val){
+            echo "There is no $mtd function that you call.";
+
+            errchk($val);
+        }
+
+
+
+        public static function __callStatic($mthd, $arg){
+            echo "There is no $mthd static function that you are calling.";
+
+            errchk($arg);
+        }
+        */
+
+
+        public function __toString(){
+            return "You are calling Object as a string.";
+        }
+
+        public function __invoke(){
+            return "You are calling Object as a method.";
+        }
+
 
     }
 
 
     $obj = new Vehical();
 
-    echo $obj-> brand;
+    isset($obj->name) ;
 
-    $obj->productYear = 1991;
+    unset($obj-> age) ;
+
+    // echo $obj-> brand;
+
+    // $obj->productYear = 1991;
+
+
+    echo $obj;
+
+    echo $obj();
+
+
+
+    $arr = array('hello' => 'First Meet', 'hi'=> 'Second time', 'hey'=> 'Old Friend');
+
+    errchk($arr);
+
+    $str = serialize($obj); // Object
+
+    // echo $str;
+
+    $bcktoary = unserialize($str);
+
+    // errchk($bcktoary);
+
+    // $obj->goodbye("Jonny", "Helin Killer");
+
+
+    // $obj::hifive("Earth", "Sun", "Moon", "Universe");
+
+
+  
+
+
+
+
     
-
-
 
 
     ?>
