@@ -291,35 +291,44 @@ include_once "./assets/view/header.php";
     // $obj::hifive("Earth", "Sun", "Moon", "Universe");
 
     */
-  
 
 
     class Main{
 
-        public function __call($mthd, $arg){
-           echo "There is no method name with " . $mthd . "<br/>";
+        public function __toString(){
+             return "Your are calling obj as a string.";
+            
+        }
+ 
+        public function __invoke(){
+             echo "Your are calling obj as a method.";
+        }
+ 
+    }
+ 
+ 
+    $obj = new Main();
+ 
+    echo $obj;
+ 
+    $obj();
+ 
 
-            $this->errchk($arg);
-       }
 
 
-       public static function __callStatic($mthd, $arg){
-           echo "There is no method name with " . $mthd . "<br/>";
+//    $ary = array('firstName'=>'Zaw Linn', 'lastName' => 'Tun', 'age'=> 28, 'graduate'=> true);
 
-            errchk($arg);
-       }
+//     $str = serialize($ary);
 
-       private function errchk($ary){
-           echo "<pre>" . print_r($ary, true) . "</pre>";
-       }
+//     echo $str;
 
-   }
+//     $toAry = unserialize($str);
+
+//     var_dump($toAry);
 
 
-   $obj = new Main();
 
-   $obj-> getName('Aung Aung', 'Maung Kyaw');
-   $obj::goHome('Yangon', 'Mandalay');
+
 
 
 

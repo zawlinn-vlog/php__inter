@@ -274,7 +274,61 @@ PHP Access Modifier &mdash;
 
 ```php
 
+    $ary = array('firstName'=>'Zaw Linn', 'lastName' => 'Tun', 'age'=> 28, 'graduate'=> true);
 
+    $str = serialize($ary);
+
+    echo $str;
+
+    $toAry = unserialize($str);
+
+    var_dump($toAry);
+
+    class Main{
+
+       public function __sleep(){
+            echo "Your are creating obj to string.";
+            return [];
+       }
+
+       public function __wakeup(){
+            echo "Your are creating string to array back.";
+       }
+
+   }
+
+
+   $obj = new Main();
+
+   $str = serialize($obj);
+
+   unserialize($str);
+
+
+```
+
+### \_\_toString vs \_\_invoke Methods &mdash;
+
+```php
+     class Main{
+
+        public function __toString(){
+             return "Your are calling obj as a string.";
+
+        }
+
+        public function __invoke(){
+             echo "Your are calling obj as a method.";
+        }
+
+    }
+
+
+    $obj = new Main();
+
+    echo $obj;
+
+    $obj();
 ```
 
 <br>
