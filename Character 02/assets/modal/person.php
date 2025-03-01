@@ -4,7 +4,7 @@
 
 interface Person{
 
-    public function runningMan();
+    public function runningMan($speed);
 
     public function beatingMan();
 }

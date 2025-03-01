@@ -16,19 +16,19 @@ require_once "./assets/modal/vehical.php";
         class Game implements Person, Vehical{
 
             private $ary;
-
+            private $speed;
 
             public function __construct($ary){
                 $this->ary = $ary;
             }
 
-
             public function getData(){
                $this->printAry($this->ary);
             }
 
-
             public function runningMan($speed){
+
+                $this-> speed = $speed;
         
             }
         
@@ -40,6 +40,11 @@ require_once "./assets/modal/vehical.php";
             }
         
             public function CrashingCar(){}
+
+
+            public function getSpeedHuman(){
+                echo "<p class='text-primary'>A People can run $this->speed Mile <sup>per</sup> hours. </p> <br/>";
+            }
 
             private function printAry($arr){
                 echo "<pre>" . print_r($arr, true) . "</pre>";
@@ -55,9 +60,9 @@ require_once "./assets/modal/vehical.php";
 
         $obj->getData();
 
+        $obj->runningMan(2);
 
-
-
+        $obj->getSpeedHuman();
 
     ?>
 
