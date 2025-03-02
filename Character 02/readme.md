@@ -37,7 +37,7 @@
 | 2   | is_string() | check data type is string  |
 | 3   | is_bool()   | check data type is boolean |
 | 4   | is_float()  | check data type is float   |
-| 5   | is_null()   | check data type is NUll    |
+| 5   | is_null()   | check data type is NULL    |
 
 <br>
 
