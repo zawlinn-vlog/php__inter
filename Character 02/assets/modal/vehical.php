@@ -4,7 +4,8 @@
 
 interface Vehical{
 
-    public function runningCar();
-
-    public function CrashingCar();
+    public function getcarname();
+    public function getproductYear();
+    public function gettype();
+    public function getgrade();
 }

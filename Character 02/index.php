@@ -101,11 +101,8 @@ require_once "./assets/modal/vehical.php";
     echo $obj->counting();
     echo $obj->counting();
 
-    
-
     echo $obj::getUsername();
  
-
     echo "<hr/>";
 
     $obj2 = new Main();
@@ -136,9 +133,6 @@ class Main{
 }
 
 
-
-
-
 class Second extends Main{
 
     public const DB_HOST = '127.0.0.1';
@@ -149,17 +143,9 @@ class Second extends Main{
 echo "<p class='text-danger'>Your Host is &mdash; " . Second::DB_HOST . "</p>";
 
 
-
-
-
-
-
-
 $obj = new Main();
 
 echo $obj::dbconnect();
-
-
 
 $sec = new Second();
 
@@ -167,6 +153,8 @@ echo $sec->getHost();
 
 
 */
+
+/*
 
 class Index{
     public function showResult($num){
@@ -203,8 +191,120 @@ $ind-> showResult('Zaw linn');
 $ind-> showResult(true);
 $ind-> showResult(NULL);
 
+
+*/
+
+function errPrint($arr){
+    echo "<pre>" . print_r($arr, true) . "</pre>";
+}
+
+
+
+
+class Driver implements Person{
+    private $name, $age, $family, $martrialStatus;
+
+    public function __construct(string $name, int $age, array $family, bool $martrialStatus){
+
+        $this-> name = $name;
+
+        $this-> age = $age;
+
+        $this-> family = $family;
+
+        $this-> martrialStatus = $martrialStatus;
+
+    }
+
+    public function getname():string{
+        return $this-> name;
+    }
+    public function getage() :int{
+        return $this-> age;
+    }
+    public function getfamily() :array{
+        return $this-> family;
+    }
+    public function getmartrialStatus() :int{
+        return $this-> martrialStatus;
+    }
+   
+}
+
+
+class Car implements Vehical{
+    private $name, $productYear, $type, $grade;
+
+    public function __construct(string $name,int $productYear,string $type,string $grade){
+
+        $this->name = $name;
+        $this->productYear = $productYear;
+        $this->type = $type;
+        $this->grade = $grade;
+
+    }
+
+    public function getcarname() :string{
+        return $this->name;
+    }
+    public function getproductYear() :int{
+        return $this->productYear;
+    }
+    public function gettype() :string{
+        return $this->type;
+    }
+    public function getgrade():string{
+        return $this->grade;
+    }
+
+
+}
+
+class Rent{
+    private $driver, $car;
+
+    public function __construct(Driver $driver, Car $car){
+        $this->driver = $driver;
+        $this->car = $car;
+    }
+
+    public function getdriver(){
+        return $this->driver;
+    }
+
+    public function getCar(){
+        return $this->car;
+    }
+}
+
+$driver1 = new Driver('Zawlinn', 28, ['father'=>"U Sein Linn", 'mother'=> "Dar Ohnmar"],  false);
+$driver2 = new Driver('Saram', 34, ['father'=>"Alduman", 'mother'=> "Iasha"], true);
+$car1 = new Car('Alphat', 2008, 'Mini Bus', 'grade G');
+$car2 = new Car('Macedes', 2020, 'Luxury', 'grade F');
+
+errPrint($driver1);
+errPrint($driver2);
+errPrint($car1);
+echo $car1->getcarname();
+errPrint($car2);
+
+$rent1 = new Rent($driver1, $car1);
+$rent2 = new Rent($driver2, $car2);
+
+$rentlist = [$rent1, $rent2];
+
+
+errPrint($rentlist);
+errPrint($rentlist[0]->getCar()->getcarname());
+errPrint($rentlist[1]->getCar()->getcarname());
+
+// echo $rentlist[0]->getCar();
+
+
+
+
     
-    ?>
+?>
 
 </div>
 

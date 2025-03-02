@@ -4,7 +4,9 @@
 
 interface Person{
 
-    public function runningMan($speed);
+    public function getname();
+    public function getage();
+    public function getfamily();
+    public function getmartrialStatus();
 
-    public function beatingMan();
 }
