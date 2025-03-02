@@ -116,6 +116,8 @@ require_once "./assets/modal/vehical.php";
 */
 
 
+/*
+
 class Main{
     private const DB_HOST = 'localhost';
     private const DB_NAME = 'myblog';
@@ -162,6 +164,44 @@ echo $obj::dbconnect();
 $sec = new Second();
 
 echo $sec->getHost();
+
+
+*/
+
+class Index{
+    public function showResult($num){
+
+        if(is_int($num)){
+            echo "<p class='text-primary'>Your Data type is <span class='text-danger'>Number</span> </p>";
+
+        }else if(is_string($num)){
+            echo "<p class='text-primary'>Your Data type is <span class='text-danger'>String</span> </p>";
+        }
+
+        else if(is_bool($num)){
+            echo "<p class='text-primary'>Your Data type is <span class='text-danger'>Boolean</span> </p>";
+        }
+        else if(is_float($num)){
+            echo "<p class='text-primary'>Your Data type is <span class='text-danger'>Float</span> </p>";
+        }
+        else if(is_null($num)){
+            echo "<p class='text-primary'>Your Data type is <span class='text-danger'>Null</span> </p>";
+        }
+        
+        else{
+            die("<p class='text-danger'> Your Data type must be Number, String, null, Boolean!</span> </p>");
+        }
+    }
+}
+
+$ind = new Index();
+
+// $ind-> showResult([2,4]);
+$ind-> showResult(300);
+$ind-> showResult(300.55);
+$ind-> showResult('Zaw linn');
+$ind-> showResult(true);
+$ind-> showResult(NULL);
 
     
     ?>

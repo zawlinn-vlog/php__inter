@@ -8,7 +8,36 @@
 
 <br/>
 
-###
+### Abstract Class, Interface and Class
+
+| #   | Name        | Features                                                                       |
+| --- | ----------- | ------------------------------------------------------------------------------ |
+| 1   | Interface   | Can include abstract method                                                    |
+|     |             | Can include concrete method                                                    |
+|     |             | Class must be abstract if any of the method is abstract                        |
+|     |             | All abstract method must be overrrided                                         |
+|     |             | A class can only extend one abstract class                                     |
+| 2   | Interface   | Can have only abstract method                                                  |
+|     |             | Can have only constants                                                        |
+|     |             | All methods must be visible                                                    |
+|     |             | All methods must be overrided                                                  |
+|     |             | A class can implement more than one interface                                  |
+| 3   | Super Class | Can have only concrete method                                                  |
+|     |             | A class can only Extends only one sputer class                                 |
+|     |             | Super class can inherit any class or Abstract and can implement any interface. |
+|     |             | All features work just like normal class                                       |
+
+<hr/>
+
+### Check Data Type
+
+| #   | name        | Description                |
+| --- | ----------- | -------------------------- |
+| 1   | is_int()    | check data type is number  |
+| 2   | is_string() | check data type is string  |
+| 3   | is_bool()   | check data type is boolean |
+| 4   | is_float()  | check data type is float   |
+| 5   | is_null()   | check data type is NUll    |
 
 <br>
 
