@@ -13,6 +13,8 @@ require_once "./assets/modal/vehical.php";
 
     <?php
 
+    /*
+
         class Game implements Person, Vehical{
 
             private $ary;
@@ -63,7 +65,105 @@ require_once "./assets/modal/vehical.php";
         $obj->runningMan(2);
 
         $obj->getSpeedHuman();
+ */
 
+
+ /*
+
+    class Main{
+        private $age = 28;
+        private static $username = "zawlinn.info";
+        private static $count = 1;
+
+        public function counting(){
+            return "<p class='text-primary'>Your count is - " . self::$count++ . "</p>";
+        }
+
+        public static function getUsername(){
+            return "<p class='text-success'> Your username is " . self::$username . "</p>";
+        }
+
+        public static function getter(){
+
+            $this->counting();
+        }
+
+    }
+
+
+
+    $obj = new Main();
+
+    // $obj::getter();
+
+    echo $obj->counting();
+    echo $obj->counting();
+    echo $obj->counting();
+    echo $obj->counting();
+
+    
+
+    echo $obj::getUsername();
+ 
+
+    echo "<hr/>";
+
+    $obj2 = new Main();
+        echo $obj2-> counting();
+        echo $obj2-> counting();
+        echo $obj2-> counting();
+        echo $obj2-> counting();
+*/
+
+
+class Main{
+    private const DB_HOST = 'localhost';
+    private const DB_NAME = 'myblog';
+    private const DB_USER = 'root';
+    private const DB_PASS = '';
+
+
+    public static function dbconnect(){
+        return self::DB_HOST . "<br/>" . self::DB_NAME . "<br/>" . self::DB_USER . "<br/>" . self::DB_PASS;
+    }
+
+    public function getHost(){
+        return static::DB_HOST;
+    }
+
+}
+
+
+
+
+
+class Second extends Main{
+
+    public const DB_HOST = '127.0.0.1';
+    
+}
+
+
+echo "<p class='text-danger'>Your Host is &mdash; " . Second::DB_HOST . "</p>";
+
+
+
+
+
+
+
+
+$obj = new Main();
+
+echo $obj::dbconnect();
+
+
+
+$sec = new Second();
+
+echo $sec->getHost();
+
+    
     ?>
 
 </div>
