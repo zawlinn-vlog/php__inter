@@ -1,7 +1,8 @@
 <?php
-    
 
 namespace assets\app\dbconnect;
+
+use assets\app\control\Tools;
 
 class DBconnect{
 
@@ -10,11 +11,26 @@ class DBconnect{
     const DB_PASS = '';
     const DB_NAME = 'myshop';
 
-    private $db;
+    private $conn; 
+    private static $instance;
 
-    public function __construct(){
-        $this-> db = new \mysqli(self::DB_HOST, self:: DB_USER, self::DB_PASS, self::DB_NAME);
-       
+    private function __construct(){
 
+        $this-> conn = new \mysqli(self:: DB_HOST, self:: DB_USER, self:: DB_PASS, self:: DB_NAME);
+
+        // Tools::chkErr($this->conn);
     }
+
+    public static function getConnect(){
+        if(!self::$instance){
+            self::$instance = new DBconnect();
+        }
+
+        return self::$instance;
+    }
+
+    public function getdb(){
+        return $this-> conn;
+    }
+
 }

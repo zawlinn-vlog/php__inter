@@ -4,7 +4,7 @@ namespace assets\app\control;
 
 class Tools{
 
-    public static function checkErr($db){
-        echo "<pre>" . print_r($db, true) . "</pre>"; 
+    public static function chkErr($obj){
+        echo "<pre>" . print_r($obj, true) . "</pre>";
     }
 }
