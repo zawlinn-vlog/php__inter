@@ -1,0 +1,25 @@
+//
+
+@use "../abstract/variables" as *;
+@use "../abstract/functions" as fun;
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}-color: #{$color};
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  block-size: inherit;
+}
+
+html {
+  line-height: 1;
+}
+
+body {
+  box-sizing: border-box;
+  background: fun.getColor(gray);
+}
