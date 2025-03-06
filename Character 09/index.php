@@ -13,9 +13,13 @@ class Main{
        $data = new Abt();
 
 
-       $data->getsingledata(4);
+       $data->getsingledata(1);
 
-       
+    //    $data-> insertsingledata('Saram', "Havard@317");
+
+    // $data-> updatedata(3, 'Microphone@317');
+
+    $data->deldata(3);
               
 
     }
