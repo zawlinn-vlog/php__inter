@@ -45,4 +45,50 @@ class Adl{
         
     }
 
+    public function insertsingledata($uname, $pass){
+        $str = $this->db-> prepare("INSERT INTO members (username, password) VALUE (?,?)");
+
+        $str->bind_param('ss', $uname, $pass);
+
+        $res = $str->execute();
+
+        echo $res ? "Insert SuccessFul" : "Insert Failure";
+    }
+
+
+    public function insertmulti(){
+
+        $ary = [
+            ['Zawlinn', "Oxford@317"],
+            ['Saram', 'Havard@317'],
+            ['Abbas', 'Oxford@317']
+        ];
+
+        // var_dump($ary);
+
+        $str = $this->db->prepare("INSERT INTO members (username, password) VALUES (?,?)");
+
+        foreach($ary as $val){
+
+            // var_dump($val);
+
+            $str->bind_param('ss',$val[0], $val[1]);
+
+            $res = $str-> execute();
+
+            echo $str->insert_id;
+        }
+    }
+
+    public function singledel($id){
+        $str = $this->db->prepare("DELETE FROM members WHERE id=?");
+
+
+        $str->bind_param('i', $id);
+
+        $res = $str->execute();
+
+        echo $res ? 'DEL success' : 'Del Fail';
+    }
+
 }

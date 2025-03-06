@@ -12,6 +12,13 @@ class Main{
 
         $db-> getsingledata(2);
 
+        // $db-> insertsingledata('saram', 'Havard@317');
+
+
+        // $db-> insertmulti();
+
+        $db-> singledel(3);
+
        
     }
 
@@ -25,7 +32,7 @@ $main = new Main();
 
 
 include_once "./assets/view/header.php";
-// include_once "./assets/view/navbar.php";
+include_once "./assets/view/navbar.php";
 // include_once "./assets/view/carousel.php";
 ?>
 
